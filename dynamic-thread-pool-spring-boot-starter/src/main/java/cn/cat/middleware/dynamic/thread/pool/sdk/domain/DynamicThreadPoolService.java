@@ -1,10 +1,8 @@
 package cn.cat.middleware.dynamic.thread.pool.sdk.domain;
 
 import cn.cat.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,10 +13,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @author Cat
  * @description 动态线程池服务
  */
+@Slf4j
 @Service
 public class DynamicThreadPoolService implements IDynamicThreadPoolService {
-    private static final Logger logger = LoggerFactory.getLogger(DynamicThreadPoolService.class);
-
     private final String applicationName;
     private final Map<String, ThreadPoolExecutor> threadPoolExecutorMap;
 

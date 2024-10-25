@@ -1,5 +1,10 @@
 package cn.cat.middleware.dynamic.thread.pool.sdk.domain.model.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class ThreadPoolConfigEntity {
     /**
      * 应用名称
@@ -46,83 +51,8 @@ public class ThreadPoolConfigEntity {
      */
     private int remainingCapacity;
 
-    public ThreadPoolConfigEntity() {
-    }
-
     public ThreadPoolConfigEntity(String appName, String threadPoolName) {
         this.appName = appName;
         this.threadPoolName = threadPoolName;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
-    public String getThreadPoolName() {
-        return threadPoolName;
-    }
-
-    public void setThreadPoolName(String threadPoolName) {
-        this.threadPoolName = threadPoolName;
-    }
-
-    public int getCorePoolSize() {
-        return corePoolSize;
-    }
-
-    public void setCorePoolSize(int corePoolSize) {
-        this.corePoolSize = corePoolSize;
-    }
-
-    public int getMaximumPoolSize() {
-        return maximumPoolSize;
-    }
-
-    public void setMaximumPoolSize(int maximumPoolSize) {
-        this.maximumPoolSize = maximumPoolSize;
-    }
-
-    public int getActiveCount() {
-        return activeCount;
-    }
-
-    public void setActiveCount(int activeCount) {
-        this.activeCount = activeCount;
-    }
-
-    public int getPoolSize() {
-        return poolSize;
-    }
-
-    public void setPoolSize(int poolSize) {
-        this.poolSize = poolSize;
-    }
-
-    public String getQueueType() {
-        return queueType;
-    }
-
-    public void setQueueType(String queueType) {
-        this.queueType = queueType;
-    }
-
-    public int getQueueSize() {
-        return queueSize;
-    }
-
-    public void setQueueSize(int queueSize) {
-        this.queueSize = queueSize;
-    }
-
-    public int getRemainingCapacity() {
-        return remainingCapacity;
-    }
-
-    public void setRemainingCapacity(int remainingCapacity) {
-        this.remainingCapacity = remainingCapacity;
     }
 }
