@@ -9,7 +9,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>dynamic-thread-pool-spring-boot-starter</artifactId>
+    <artifactId>dynamic-thread-pool-test</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -20,16 +20,31 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.cat.middleware</groupId>
+            <artifactId>dynamic-thread-pool-spring-boot-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -1,0 +1,17 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: dynamic-thread-pool-test-app
+
+# 线程池配置
+thread:
+  pool:
+    executor:
+      config:
+        core-pool-size: 20
+        max-pool-size: 50
+        keep-alive-time: 5000
+        block-queue-size: 5000
+        policy: CallerRunsPolicy
