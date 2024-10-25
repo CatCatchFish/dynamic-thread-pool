@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.cat.middleware.dynamic.thread.pool.sdk.config.DynamicThreadPoolAutoConfig
