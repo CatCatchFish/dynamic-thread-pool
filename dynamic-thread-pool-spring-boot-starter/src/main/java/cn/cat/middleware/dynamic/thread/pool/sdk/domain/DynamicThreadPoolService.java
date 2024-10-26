@@ -3,6 +3,7 @@ package cn.cat.middleware.dynamic.thread.pool.sdk.domain;
 import cn.cat.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +44,16 @@ public class DynamicThreadPoolService implements IDynamicThreadPoolService {
             return new ThreadPoolConfigEntity(applicationName, threadPoolName);
         }
         return convertToVO(threadPoolName, threadPoolExecutor);
+    }
+
+    @Override
+    public void updateThreadPoolConfig(ThreadPoolConfigEntity threadPoolConfigEntity) {
+        if (threadPoolConfigEntity == null || !applicationName.equals(threadPoolConfigEntity.getAppName())) return;
+        ThreadPoolExecutor threadPoolExecutor = threadPoolExecutorMap.get(threadPoolConfigEntity.getThreadPoolName());
+        if (threadPoolExecutor == null) return;
+        // 更新核心线程数和最大线程数
+        threadPoolExecutor.setCorePoolSize(threadPoolConfigEntity.getCorePoolSize());
+        threadPoolExecutor.setMaximumPoolSize(threadPoolConfigEntity.getMaximumPoolSize());
     }
 
     private ThreadPoolConfigEntity convertToVO(String threadPoolBeanName, ThreadPoolExecutor threadPoolExecutor) {
